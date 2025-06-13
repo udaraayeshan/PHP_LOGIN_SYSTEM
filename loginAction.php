@@ -20,9 +20,15 @@ $res=mysqli_query($con,"select * from user where UserN='$u' and Password='$p' ")
 
 
 if($b){
-    echo "Login Success";
+  header("location:dashboard.php");
+
 }else{
-    echo "Login Falied";
+
+   echo "<script>";
+   echo "alert('Wrong User Number OR Password');";
+   echo "window.location='login.html'";
+   echo "</script>";
+  
 }
  
 
