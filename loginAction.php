@@ -1,4 +1,5 @@
 <?php
+session_start(); 
 
 $u=$_POST["un"];
 $p=$_POST["pass"];
@@ -20,7 +21,9 @@ $res=mysqli_query($con,"select * from user where UserN='$u' and Password='$p' ")
 
 
 if($b){
-  header("location:dashboard.php");
+
+  $_SESSION['USER']= $u;
+  header("location:index.php");
 
 }else{
 
