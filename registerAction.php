@@ -3,16 +3,12 @@
 $u=$_POST["un"];
 $p=$_POST["pass"];
 
-$con=mysqli_connect("localhost","root","","logins");
-
-if(!$con){
-    echo "Database Donnection Failed";
-}
+include('db.php');
 
 $res=mysqli_query($con,"insert into user values('$u','$p')");
 
 if($res){
-    echo "Success";
+    header("location:index.php");
 }else{
     echo "failed";
 }

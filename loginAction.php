@@ -4,11 +4,8 @@ session_start();
 $u=$_POST["un"];
 $p=$_POST["pass"];
 
-$con=mysqli_connect("localhost","root","","logins");
 
-if(!$con){
-    echo "Database Donnection Failed";
-}
+include('db.php');
 
 
 $res=mysqli_query($con,"select * from user where UserN='$u' and Password='$p' ");
