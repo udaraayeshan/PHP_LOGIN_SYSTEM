@@ -12,8 +12,12 @@ $res=mysqli_query($con,"select * from user where UserN='$u' and Password='$p' ")
 
     $b=false;              //boolean gannawa if ekata condition ekak ganna
 
-    while($row=mysqli_fetch_array($res)){
+while($row=mysqli_fetch_array($res)){
     $b=true;
+
+    //usertype value eka ganimata
+    $_SESSION['ut']=$row['UserType'];
+    
 }
 
 
